@@ -1,4 +1,3 @@
-
 name: Build SIXWAY APK
 
 on:
@@ -24,8 +23,8 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Accept Android SDK licenses
+        run: yes | /usr/local/lib/android/sdk/cmdline-tools/latest/bin/sdkmanager --licenses
 
       - name: Build debug APK
         run: |
